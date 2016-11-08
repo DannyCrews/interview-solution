@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Interview exercise</title>
+<script type="text/javascript" src="plainjs.js"></script>
+</head>
+<body>
+No attempt at esthetics bare bones calculator:</br>
+<!-- Added `placeholder` value to input fields to prevent ambiguity prior to entering a value into the field.
+
+Change input fields to text to allow free-form entry
+ -->
+<input type="text" class="operand" id="operand1" placeholder='enter number' />
+<select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="/">/</option>
+    <option value="*">*</option>
+</select>
+<input type="text" class="operand" id="operand2" placeholder='enter number' />
+= <span id="answer"/>
+
+</body>
+</html>
+
+<!-- problem - calling the javascript in the HTML head was causing the javascript to execute before the HTML elements are rendered on the page.
+
+solution - I wrapped the javascript in:
+document.addEventListener("DOMContentLoaded", function(event) {
+});
+Alternately, I could have moved the script to the bottom of the body so that the doesn't fire until after the HTML was loaded.
+ -->
